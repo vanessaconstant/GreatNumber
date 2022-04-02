@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/style.css') }}">
     <title>Great Numbers</title>
 </head>
 
@@ -13,6 +13,20 @@
 
     <h1 class="header">Welcome to the Great Number Game!!!</h1>
     <p class="para-text">I am thinking of a number between 1 and 100 </p>
+    {%if 'guessed_number' in session%}
+    {% if session.success%}
+    <div class="result-board result-board-true">
+        {{session.message}}
+        <form action="/reset">
+            <input type="submit" name="reset" id="reset-btn" value="Play Again">
+        </form>
+    </div>
+    {%else%}
+    <div class="result-board">
+        {{session.message}}
+    </div>
+    {%endif%}
+    {%endif%}
 
 
     <form action="/guess" method="post" class="guess-form">

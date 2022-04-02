@@ -16,28 +16,23 @@ def startGame():
 
 
 @app.route('/guess', methods=['POST'])
-def guess():
+def result():
 
     session['guessed_number'] = int(request.form['guessed_number'])
 
-    return redirect('/result')
-
-
-@app.route('/result')
-def result():
-    if int(session['num']) == session['guessed_number']:
-        message = f'Success!! The number was {session["num"]}'
-        success = True
+    if session['num'] == session['guessed_number']:
+        session['message'] = f'Success!! The number was {session["num"]}'
+        session['success'] = True
     elif int(session['num']) > session['guessed_number']:
-        message = 'Too Low!!'
-        success = False
+        session['message'] = 'Too Low!!'
+        session['success'] = False
     else:
-        message = 'Too High!!'
-        success = False
-    return render_template('result.html', message=message, success=success)
+        session['message'] = 'Too High!!'
+        session['success'] = False
+    return redirect('/')
 
 
-@app.route('/reset')
+@ app.route('/reset')
 def reset():
     session.clear()
     return redirect('/')
