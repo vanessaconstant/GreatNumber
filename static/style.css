@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 800px;
+    margin: 0 auto;
+}
+
+.header, .para-text{
+    text-align: center;
+    line-height: 2.4rem;
+}
+
+.para-text{
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.guess-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 275px;
+    margin: 0 auto;
+    background-color: #444;
+    padding: 20px 10px 10px;
+}
+
+ label {
+    text-align: center;
+    color: gold;
+    margin-bottom: 10px;
+}
+
+#number{
+    padding: 8px 15px;
+    margin-bottom: 20px;
+    border: none;
+    width: 250px;
+    border-radius: 5px;
+
+}
+
+#guess-btn, #reset-btn{
+    width: 75px;
+    background-color: gold;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-bottom: 5px;
+   
+}
+
+.result-board{
+    width: 500px;
+    height: 100px;
+    font-size: 24px;
+    text-align: center;
+    padding: 10px 20px;
+    margin: 0 auto;
+    color: gold;
+    background-color: rgb(205, 54, 54);
+}
+
+.result-board-true{
+    background-color: green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+#reset-btn{
+    margin-top: 8px;
+    width: 100px;
+}
+
+
+
+
